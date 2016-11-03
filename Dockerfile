@@ -1,9 +1,11 @@
 FROM node:7
 
-RUN npm install -g nodemon
+COPY . /usr/src/app/
+
+RUN cd /usr/src/app/ \
+ && npm install -g nodemon \
+ && npm install
 
 EXPOSE 8888
 WORKDIR /usr/src/app
-CMD npm install && npm start
-
-COPY . /usr/src/app/
+CMD npm start
