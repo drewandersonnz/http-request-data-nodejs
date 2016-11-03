@@ -25,6 +25,10 @@ server.on('connection', function(socket) {
         data = data + chunk.toString();
     });
 });
-server.listen(process.env.NODE_PORT || 8888, process.env.NODE_IP || '0.0.0.0', function () {
-    console.log(`Application worker ${process.pid} started...`);
-});
+server.listen(
+    process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8888,
+    process.env.IP || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0',
+    function () {
+        console.log(`Application worker ${process.pid} started...`);
+    }
+);
