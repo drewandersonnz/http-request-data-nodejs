@@ -34,7 +34,6 @@ case ${1} in
         COMMAND="""
             sudo docker run -it --rm
             -v `pwd`:/usr/src/app
-            -w /usr/src/app
             --publish 8888
             ${NAMESPACE}/${PROJECT}:latest
             bash
@@ -54,7 +53,6 @@ case ${1} in
             --detach
             --name=${NAME}
             -v `pwd`:/usr/src/app
-            -w /usr/src/app
             --publish 8888
             ${NAMESPACE}/${PROJECT}:latest
         """
