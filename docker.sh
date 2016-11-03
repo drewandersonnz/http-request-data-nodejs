@@ -52,7 +52,6 @@ case ${1} in
             sudo docker run
             --detach
             --name=${NAME}
-            -v `pwd`:/usr/src/app
             --publish 8888
             ${NAMESPACE}/${PROJECT}:latest
         """
