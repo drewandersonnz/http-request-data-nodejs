@@ -8,4 +8,4 @@ RUN cd /usr/src/app/ \
 
 EXPOSE 8888
 WORKDIR /usr/src/app
-CMD npm start
+CMD cd /usr/src/app && npm start
